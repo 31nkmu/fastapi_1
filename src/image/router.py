@@ -9,12 +9,12 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from .utils import get_full_link, del_file
 
-from database import get_async_session
+from core.database import get_async_session
 
 from .models import Image
 from .schemas import ImageRead
 
-from config import logger
+from core.logs_config import logger
 
 router = APIRouter(
     prefix='/images',

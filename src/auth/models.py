@@ -6,7 +6,7 @@ from sqlalchemy.ext.associationproxy import association_proxy
 
 from sqlalchemy.orm import Mapped, mapped_column, relationship, declarative_base
 
-from database import Base
+from core.database import Base
 
 
 class User(SQLAlchemyBaseUserTable[int], Base):

@@ -1,6 +1,6 @@
 import os
 
-from config import HOST, PORT
+from core.config import HOST, PORT
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy import select
 from .models import Image

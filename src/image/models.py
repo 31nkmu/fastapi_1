@@ -5,7 +5,7 @@ from sqlalchemy import String, ForeignKey, Text
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy_utils import URLType
 
-from database import Base
+from core.database import Base
 
 
 class Image(Base):

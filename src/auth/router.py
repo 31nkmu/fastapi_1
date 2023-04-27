@@ -4,14 +4,14 @@ from sqlalchemy import select, delete, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from database import get_async_session
+from core.database import get_async_session
 from starlette.responses import JSONResponse
 
 from project.models import Project
 from .models import User
 from .schemas import UserRead, UserCreate, UserOptional
 from image.utils import get_full_link
-from config import logger
+from core.logs_config import logger
 
 router = APIRouter()
 

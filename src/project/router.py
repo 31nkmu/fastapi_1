@@ -4,11 +4,11 @@ from sqlalchemy import select, insert, update, delete
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from database import get_async_session
+from core.database import get_async_session
 from .models import Project
 
 from .schemas import ProjectCreate, ProjectOptional, ProjectRead
-from config import logger
+from core.logs_config import logger
 
 router = APIRouter(
     prefix='/projects',
