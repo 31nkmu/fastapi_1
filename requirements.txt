@@ -6,4 +6,3 @@ alembic
 python-dotenv
 SQLAlchemy-ImageAttach
 SQLAlchemy-Utils
-py-fastapi-logging
