@@ -24,3 +24,6 @@ class UserCreate(schemas.BaseUserCreate):
     is_superuser: Optional[bool] = False
     is_verified: Optional[bool] = False
 
+
+class UserOptional(UserCreate):
+    __annotations__ = {k: Optional[v] for k, v in UserCreate.__annotations__.items()}

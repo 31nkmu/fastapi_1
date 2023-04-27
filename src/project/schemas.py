@@ -6,23 +6,17 @@ from pydantic import BaseModel
 class ProjectCreate(BaseModel):
     title: str
     description: Optional[str]
-    owner_id: int
+    user_id: int
 
 
 class ProjectRead(BaseModel):
     id: int
     title: str
     description: Optional[str]
-    owner_id: int
+    user_id: int
 
     class Config:
         orm_mode = True
-
-
-# class PatchProject(BaseModel):
-#     title: Optional[str]
-#     description: Optional[str]
-#     owner_id: Optional[int]
 
 
 class ProjectOptional(ProjectCreate):
