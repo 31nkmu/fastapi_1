@@ -1,10 +1,12 @@
 from fastapi import APIRouter, Depends, encoders, HTTPException
+from fastapi_cache.decorator import cache
 from pydantic.types import List
 from sqlalchemy import select, insert, update, delete
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from core.database import get_async_session
+from tasks.tasks import send_email_report_dashboard
 from .models import Project
 
 from .schemas import ProjectCreate, ProjectOptional, ProjectRead
@@ -17,8 +19,10 @@ router = APIRouter(
 
 
 @router.get('/', response_model=List[ProjectRead])
+@cache(expire=30)
 async def get_all_projects(session: AsyncSession = Depends(get_async_session)):
     logger.info('get all projects')
+    send_email_report_dashboard.delay('billal')
     try:
         query = select(Project)
         result = await session.scalars(query)

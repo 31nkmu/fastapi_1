@@ -14,3 +14,6 @@ SECRET_AUTH = os.environ.get('SECRET_AUTH')
 
 HOST = os.environ.get('HOST')
 PORT = os.environ.get('PORT')
+
+SMTP_USER = os.environ.get('SMTP_USER')
+SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')

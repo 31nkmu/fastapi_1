@@ -19,6 +19,7 @@ router = APIRouter()
 @router.get('/')
 async def get_all_users(session: AsyncSession = Depends(get_async_session)):
     logger.info('get all users')
+
     try:
         query = select(User).options(selectinload(User.projects)).options(selectinload(User.images))
         result = await session.scalars(query)

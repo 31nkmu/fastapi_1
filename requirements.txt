@@ -6,3 +6,6 @@ alembic
 python-dotenv
 SQLAlchemy-ImageAttach
 SQLAlchemy-Utils
+fastapi-cache2[redis]
+celery
+flower
